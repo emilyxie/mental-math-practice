@@ -1,0 +1,8 @@
+html {
+	font-family: OpenSans, Calibri;
+}
+
+div.main-container {
+	width: 70%;
+	margin: auto;
+}
