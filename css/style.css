@@ -2,7 +2,18 @@ html {
 	font-family: OpenSans, Calibri;
 }
 
-div.main-container {
+.main-container {
 	width: 70%;
 	margin: auto;
+}
+
+input[type=text] {
+	border: 2px solid #000000;
+	padding: 1px 0 1px .5em;
+}
+
+input[type=submit] {
+	border-radius: 8px;
+	border: 2px solid #000000;
+	background-color: #FFFFFF;
 }
