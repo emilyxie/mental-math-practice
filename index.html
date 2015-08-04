@@ -18,19 +18,21 @@
       </div>
       <div class="header-container-padding"></div>
       <div class="math-question-container">
-        <!-- <script type="text/x-handlebars-template"
-                  id="question-template">
-          <h2>{{question}}</h2>
-        </script> -->
-        <p class="center-text math-question"> 1+1 </p>
+         <p class="center-text math-question" id="question-text">&nbsp;</p>
       </div>
-      <input type="text" name="answer" placeholder="Type your answer here">
-      <input type="submit" value="submit" id='submitButton'>
+      <form>
+        <input type="text" name="answer" placeholder="Type your answer here">
+        <input type="submit" value="submit" id='submitButton' class='hover'>
+      </form>
+      <input type="button" value="+" class="hover focus-button" id="addition">
+      <input type="button" class="hover" value="-" id="subtraction">
+      <input type="button" class="hover" value="×" id="multiplication">
+      <input type="button" class="hover" value="÷" id="division">
     </div>
 
   <!-- Include Javascript -->
-  <script src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/handlebars.js"></script>
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/jquery-ui.js"></script>
   <script type="text/javascript" src="js/question-handler.js"></script>
   </body>
 </html>

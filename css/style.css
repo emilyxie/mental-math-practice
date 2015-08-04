@@ -15,7 +15,7 @@ h1 {
 .header-container {
   width: 100%;
   margin: auto;
-  background-color: #16a085;
+  background-color: #1abc9c;
   color: #FFFFFF;
   position: fixed;
   top: 0;
@@ -39,7 +39,9 @@ h1 {
 }
 
 input[type=text] {
-  border-top: 3px solid #16a085;
+  border-top: 3px solid #1abc9c;
+  border-left: 0;
+  border-right: 0;
   height: 1.5em;
   font-size: 3em;
   text-align: center;
@@ -54,7 +56,31 @@ input[type=submit] {
   text-transform: uppercase;
   color: #FFFFFF;
 	width: 100%;
-	background-color: #16a085;
+	background-color: #1abc9c;
+}
+
+input[type=button] {
+  margin-top: .25em;
+  width: 24.75%;
+  font-family: OpenSans;
+  font-weight: 700;
+  border: 0;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #1abc9c;
+}
+
+input.focus-button, input.focus-button:hover{
+  background-color: #138a72;
+}
+
+input[type=submit].hover:hover, input[type=button].hover:hover{
+  background-color: #16a085;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
 }
 
 ::-webkit-input-placeholder {
