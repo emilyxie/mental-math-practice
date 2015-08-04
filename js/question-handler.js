@@ -3,6 +3,7 @@ var POSSIBLE_TYPES = ['addition', 'subtraction', 'multiplication','division'];
 var submitButton = $('input#submitButton');
 var inputText = $('input[name=answer]');
 var questionText = $('#question-text');
+var headerContainer = $('.header-container');
 var currentQuestion = {text: null, type: null, answer: null};
 var activeTypes = ['addition'];
 
@@ -33,6 +34,10 @@ function initListeners(){
 		}
   });
 
+  submitButton.submit(function(e) {
+    e.preventDefault(); // to stop the form from submitting
+  });
+
   POSSIBLE_TYPES.forEach(function(type){
     $type = $('#'+type);
     $type.click(function(e){
@@ -40,19 +45,26 @@ function initListeners(){
       var targetId = $target.attr('id');
       if($target.hasClass('focus-button')){ //it is currently active
         $target.removeClass('focus-button');
+        $target.addClass('hover');
         activeTypes.splice(activeTypes.indexOf(targetId), 1);
       } else { //it is not currently active
         $target.addClass('focus-button');
+        $target.removeClass('hover');
         activeTypes.push(targetId);
       }
     });
   });
 
-  submitButton.submit(function(e) {
-    e.preventDefault(); // to stop the form from submitting
+  window.addEventListener('scroll', function(e){
+    var distanceY = window.pageYOffset || document.documentElement.scrollTop;
+    var shrinkOn = 50;
+    if (distanceY > shrinkOn) {
+      headerContainer.css('font-size', '1.5em');
+    } else {
+      headerContainer.css('font-size', '');
+    }
   });
 }
-
 
 function generateQuestion(){
   currentQuestion.type = activeTypes[Math.floor((Math.random() * activeTypes.length))];
@@ -84,8 +96,6 @@ function generateQuestion(){
       break;
   }
 
-  console.log(currentQuestion.answer);
-  currentQuestion.answer = 1;
   currentQuestion.text = [num1, sign, num2].join(" ");
   questionText.html(currentQuestion.text);
 }
