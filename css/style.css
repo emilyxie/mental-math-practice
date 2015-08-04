@@ -2,18 +2,73 @@ html {
 	font-family: OpenSans, Calibri;
 }
 
+
+h1 {
+  text-transform: uppercase;
+}
+
 .main-container {
-	width: 70%;
+	width: 100%;
 	margin: auto;
 }
 
+.header-container {
+  width: 100%;
+  margin: auto;
+  background-color: #16a085;
+  color: #FFFFFF;
+  position: fixed;
+  top: 0;
+}
+
+.header-container-padding {
+  height: 3.5em;
+}
+
+.math-question-container {
+  /*background-color: #d35400;*/
+}
+
+.center-text {
+	text-align: center;
+}
+
+.math-question {
+  margin: 0 0 0 0;
+  font-size: 10em;
+}
+
 input[type=text] {
-	border: 2px solid #000000;
-	padding: 1px 0 1px .5em;
+  border-top: 3px solid #16a085;
+  height: 1.5em;
+  font-size: 3em;
+  text-align: center;
+  width: 100%;
 }
 
 input[type=submit] {
-	border-radius: 8px;
-	border: 2px solid #000000;
-	background-color: #FFFFFF;
+  font-family: OpenSans;
+  font-weight: 700;
+  border: 0;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+	width: 100%;
+	background-color: #16a085;
+}
+
+::-webkit-input-placeholder {
+   color: #bdc3c7;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #bdc3c7;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #bdc3c7;
+}
+
+:-ms-input-placeholder {
+   color: #bdc3c7;
 }
