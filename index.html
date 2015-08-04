@@ -18,22 +18,39 @@
       </div>
       <div class="header-container-padding"></div>
       <div class="math-question-container">
-         <p class="center-text math-question" id="question-text">&nbsp;</p>
+        <script id="math-question-template" type="text/x-handlebars-template">
+          <p class="center-text math-question" id="question-text">{{num1}} {{sign}} {{num2}}</p>
+        </script>
+        <div id="math-question-placeholder"></div>
       </div>
       <form>
         <input type="text" name="answer" placeholder="Type your answer here">
         <input type="submit" value="submit" id='submitButton' class='hover'>
       </form>
-      <input type="button" value="+" class="hover focus-button" id="addition">
-      <input type="button" class="hover" value="-" id="subtraction">
-      <input type="button" class="hover" value="×" id="multiplication">
-      <input type="button" class="hover" value="÷" id="division">
-    
+      <div class="score-container">
+        <span class="current-score"></span>
+        <h1 class="center-text score-text">Press Enter to Submit</h1>
+      </div>
+      <div class="option-container">
+        <div class="button-container">
+          <input type="button" value="+" class="hover focus-button" id="addition">
+        </div>
+        <div class="button-container">
+          <input type="button" class="hover" value="-" id="subtraction">
+        </div>
+        <div class="button-container">
+          <input type="button" class="hover" value="×" id="multiplication">
+        </div>
+        <div class="button-container">
+          <input type="button" class="hover" value="÷" id="division">
+        </div>
+      </div>
       <br>
     </div>
   <!-- Include Javascript -->
   <script src="js/jquery-1.10.2.js"></script>
   <script src="js/jquery-ui.js"></script>
+  <script src="js/handlebars-v3.0.3.js"></script>
   <script type="text/javascript" src="js/question-handler.js"></script>
   </body>
 </html>
