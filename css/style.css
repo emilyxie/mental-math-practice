@@ -31,6 +31,35 @@ h1 {
   height: 6em;
 }
 
+.score-container {
+  height: 2.5em;
+  font-weight: 700;
+  border: 0;
+  font-size: 1em;
+  text-transform: uppercase;
+  width: 100%;
+  position: relative;
+}
+
+.current-score {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #1abc9c;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+}
+
+.score-text {
+  z-index: 10;
+  position: inherit;
+  color: #FFFFFF;
+  margin: auto;
+}
+
+
 .math-question-container {
   /*background-color: #d35400;*/
 }
@@ -55,6 +84,7 @@ input[type=text] {
 }
 
 input[type=submit] {
+  display: none;
   font-family: OpenSans;
   font-weight: 700;
   border: 0;
@@ -67,7 +97,7 @@ input[type=submit] {
 
 input[type=button] {
   margin-top: .25em;
-  width: 24.75%;
+  width: 100%;
   font-family: OpenSans;
   font-weight: 700;
   border: 0;
@@ -78,15 +108,35 @@ input[type=button] {
 }
 
 input.focus-button, input.focus-button:hover{
-  background-color: #138a72;
+  background-color: #0d5d4d;
 }
 
 input[type=submit].hover:hover, input[type=button].hover:hover{
-  background-color: #16a085;
+  background-color: #107360;
 }
 
 textarea:focus, input:focus{
     outline: 0;
+}
+
+.option-container {
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  -webkit-align-content: center;
+}
+
+.button-container {
+  -webkit-order: 0;
+  -webkit-flex: 1 1 auto;
+  -webkit-align-self: center;
+  padding-left: 4px;
+}
+
+.button-container:first-child {
+  padding-left: 0;
 }
 
 ::-webkit-input-placeholder {
