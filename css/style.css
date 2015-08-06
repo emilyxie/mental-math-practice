@@ -21,6 +21,7 @@ h1 {
   position: fixed;
   top: 0;
   font-size: 2.3em;
+  z-index: 100;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -129,6 +130,37 @@ input[type=submit].hover:hover, input[type=button].hover:hover{
 
 textarea:focus, input:focus{
     outline: 0;
+}
+
+.math-tips-container {
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -webkit-align-items: flex-start;
+  -webkit-align-content: center;
+}
+
+.math-tips-container--individual-tip {
+  -webkit-order: 0;
+  -webkit-flex: 1 1 auto;
+  -webkit-align-self: center;
+  width: 25%;
+  padding-left: 4px;
+}
+
+.math-tips-container--individual-tip--header {
+  width: 100%;
+  background-color: #1abc9c;
+  color: #FFFFFF;
+}
+
+.math-tips-container--individual-tip--body {
+  padding: 0 1em 0 1em;
+}
+
+.math-tips-container--individual-tip:first-child {
+  padding-left: 0;
 }
 
 .option-container {
