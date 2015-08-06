@@ -1,12 +1,15 @@
 var WRONG_COLOR = '#c0392b';
+var DEFAULT_COLOR = '#1abc9c';
 var POSSIBLE_TYPES = ['addition', 'subtraction', 'multiplication','division'];
 var submitButton = $('input#submitButton');
 var inputText = $('input[name=answer]');
 var questionText = $('#question-text');
 var headerContainer = $('.header-container');
 var scoreContainer = $('.score-container');
-var questionsAnswered = 0;
-var questionsCorrect = 0;
+var currentScore = $('.current-score');
+var scoreText = $('.score-text');
+var questionsAnswered = 0.0;
+var questionsCorrect = 0.0;
 var currentQuestion = {text: null, type: null, answer: null, incorrect: false};
 var activeTypes = ['addition'];
 
@@ -29,6 +32,25 @@ function initListeners(){
       assessScore();
 		}
   });
+
+  function assessScore() {
+    var score = questionsCorrect/questionsAnswered;
+    if(scoreText.hasClass('center-text')){
+      scoreText.removeClass('center-text');
+      scoreText.addClass('right-align-text');
+      scoreText.addClass('score-text--percentage');
+    }
+    score *= 100;
+    score = Math.round(score);
+    if(score < 50){
+      currentScore.css('background-color', WRONG_COLOR);
+    } else {
+      currentScore.css('background-color', DEFAULT_COLOR);
+    }
+    scoreText.html('Score: ' + score + '%');
+    currentScore.css('width', score + '%');
+    scoreText.css('right', (100 - score + 1) + '%');
+  }
 
   submitButton.submit(function(e) {
     e.preventDefault(); // to stop the form from submitting
@@ -100,7 +122,13 @@ function generateQuestion(){
 }
 
 function checkAnswer(inputAnswer){
+  if (!currentQuestion.incorrect){
+    questionsAnswered++;
+  }
   var answerCorrect = parseInt(inputAnswer, 10) === currentQuestion.answer;
+  if (!currentQuestion.incorrect && answerCorrect){
+    questionsCorrect++;
+  }
   currentQuestion.incorrect = !answerCorrect;
   return answerCorrect;
 }

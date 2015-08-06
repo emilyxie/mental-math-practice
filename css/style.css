@@ -46,10 +46,19 @@ h1 {
   height: 100%;
   position: absolute;
   background-color: #1abc9c;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  -ms-transition: all 0.8s ease;
+}
+
+.score-text--percentage {
+  position: relative;
+  right: 0;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  -ms-transition: all 0.8s ease;
 }
 
 .score-text {
@@ -59,6 +68,9 @@ h1 {
   margin: auto;
 }
 
+.right-align-text {
+  text-align: right;
+}
 
 .math-question-container {
   /*background-color: #d35400;*/
