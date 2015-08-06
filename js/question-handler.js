@@ -8,8 +8,8 @@ var headerContainer = $('.header-container');
 var scoreContainer = $('.score-container');
 var currentScore = $('.current-score');
 var scoreText = $('.score-text');
-var questionsAnswered = 0.0;
-var questionsCorrect = 0.0;
+var questionsAnswered = 0;
+var questionsCorrect = 0;
 var currentQuestion = {text: null, type: null, answer: null, incorrect: false};
 var activeTypes = ['addition'];
 
